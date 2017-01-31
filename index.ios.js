@@ -34,6 +34,10 @@ export default class ReactNativeStanzaDemo extends Component {
 
     client.on('session:started', () => {
       console.log('Client Connected');
+      client.sendMessage({
+        to: "test2@localhost",
+        body: "Hi Hoang! and hello world"
+      });
     });
 
     client.on('raw:incoming', (xml) => {
